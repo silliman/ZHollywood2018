@@ -537,7 +537,7 @@ If you want that extra push, try these optionaladvanced assignments:
 **Step 3.14:** Enter the following command to ensure that you have no active Docker containers::
 
  [bcuser@ubuntu16045:~/zmarbles$ docker ps
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+ CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 
 **End of lab!**
 
