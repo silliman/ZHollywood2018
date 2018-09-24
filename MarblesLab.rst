@@ -103,7 +103,7 @@ An explanation of the purpose of each of these files and directories is given he
 
 The *base* directory contains Docker Compose files that are included in the *docker-compose-template.yaml* file with the *extends* directive.
 
-The *bin* directory contains Hyperledger Fabric utility programs that will be used by the *generateArifacts.sh* script to generate cryptographic material (*cryptogen*) and channel configuration transactions (*configtxgen).
+The *bin* directory contains Hyperledger Fabric utility programs that will be used by the *generateArtifacts.sh* script to generate cryptographic material (*cryptogen*) and channel configuration transactions (*configtxgen).
 
 The *channel-artifacts* directory is empty, but it must exist when the *generateArtifacts.sh* script, which you will run later, invokes the *configtxgen* utility which generates channel configuration transaction inputs.
 
