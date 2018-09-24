@@ -367,7 +367,7 @@ You should see a screen that looks like this:
 Notice that you are greeted at the top as a “United Marbles admin”.  
 Smart money says that this line in *marble1.json* has something to do with it (you may need to open a new PuTTY session and switch to the directory shown in the command below if you want to run this)::
 
- bcuser@ubuntu16044:~/zmarbles/marblesUI/config$ grep company marbles1.json 
+ bcuser@ubuntu16045:~/zmarbles/marblesUI/config$ grep company marbles1.json 
      "company": "United Marbles",
 
 I have drawn an arrow to the *Login* button.
