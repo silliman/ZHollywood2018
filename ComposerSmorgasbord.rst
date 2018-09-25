@@ -25,7 +25,7 @@ The location within your environment's PATH where the *composer* program was fou
 
 **Step 2.2** Check to see what version of Hyperledger Composer is installed::
 
- bcuser@ubuntu160445:~$ composer --version
+ bcuser@ubuntu16045:~$ composer --version
  v0.20.1
 
 **Step 2.3:** Go to your home directory::
@@ -39,7 +39,7 @@ The location within your environment's PATH where the *composer* program was fou
 
 **Step 2.5:** Open the *package.json* file in read-only mode by adding the *-R* argument to the *vi* command::
 
- bcuser@ubuntu16044:~/composer-sample-applications/packages/digitalproperty-app$ vi -R package.json 
+ bcuser@ubuntu16045:~/composer-sample-applications/packages/digitalproperty-app$ vi -R package.json 
 
 *package.json* contains information used by the *npm install* command.  If you look at the top of the *package.json* file, you see a section named 
 scripts::
@@ -176,7 +176,7 @@ A script has been provided to do this. Run the *createPeerAdminCard* script::
  Command succeeded
 
  Hyperledger Composer PeerAdmin card has been imported, host of fabric specified as 'localhost'
- bcuser@ubuntu16044:~/composer-tools/packages/fabric-dev-servers$
+ bcuser@ubuntu16045:~/composer-tools/packages/fabric-dev-servers$
  
 **Note:** Notice from the above output that the "Card Name" *PeerAdmin@hlfv1*, associated with the "UserId" *PeerAdmin* does not have any information listed under the "Business Network".  The *PeerAdmin* user has authority to install Hyperledger Composer business networks, but it does not have authority to connect to and use them.  When a Hyperledger Composer business network is installed under PeerAdmin's authority, a separate business network administrator is created for that specific business network that does have authority to connect and use just that one business network.  
 
@@ -1128,7 +1128,7 @@ At this point in time, what you see will depend on what sorts of changes, if any
 
 **Step 7.8:** I would like you to go back to an available PuTTY session (open a new one if necessary) and use the Hyperledger Composer CLI again to list your network.  This is to get a baseline before you make a change in Hyperledger Composer Playground in the next step.  So, run this command::
 
- bcuser@ubuntu16044:~$ composer network list --card admin@digitalproperty-network
+ bcuser@ubuntu16045:~$ composer network list --card admin@digitalproperty-network
  
 I'm not showing the output here because your output will vary depending on the changes you made while experimenting in *Step 6.16*
 
@@ -1136,7 +1136,7 @@ I'm not showing the output here because your output will vary depending on the c
 
 **Step 7.10:** Repeat the *composer network list* command from *Step 7.8:* and verify that the change you made in *Step 7.9* shows up in the command output::
 
- bcuser@ubuntu16044:~$ composer network list --card admin@digitalproperty-network
+ bcuser@ubuntu16045:~$ composer network list --card admin@digitalproperty-network
 
 **Step 7.11:** These next few steps clean up the system when you are done.  Before proceeding further, scroll down a bit and look at the **Bonus Material** section and decide if you want to try any of the things suggested there.  Come back here when you are done and switch to the following directory::
 
