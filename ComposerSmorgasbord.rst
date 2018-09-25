@@ -1160,7 +1160,7 @@ I'm not showing the output here because your output will vary depending on the c
  bcuser@ubuntu16045:~/composer-tools/packages/fabric-dev-servers$ docker ps
  CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 
-**Step 7.14:** If your still have PuTTY or SSH sessions where your Composer Playground, Composer REST Server, and Composer Angular App processes are running, enter **Ctrl-C** to exist those processes and type `exit` to logout of those sessions.
+**Step 7.14:** If you still have PuTTY or SSH sessions where your Composer Playground, Composer REST Server, and Composer Angular App processes are running, enter **Ctrl-C** to exist those processes and type `exit` to logout of those sessions.
 
 Thank you very much for taking the time to do this lab!
 Please fill out your session evaluation.
