@@ -652,7 +652,7 @@ In this step, the command is performed on your laptop or workstation. The above 
 
 **Note:** This step shows an example using *scp* within a *Cygwin* session.  If you are using *PuTTY* or another program such as *Filezilla*, the instructors will have provided appropriate instructions for this command.
 
-**Step 4.32:** Change to the directory from where you were previously working before you started working with Hyperledgver Composer Playground (you may need to start a new PuTTY session if Hyperledger Composer Playground is tying up your only other session)::
+**Step 4.32:** Change to the directory from where you were previously working before you started working with Hyperledger Composer Playground (you may need to start a new PuTTY session if Hyperledger Composer Playground is tying up your only other session)::
 
  bcuser@ubuntu16045:~$ cd ~/composer-sample-applications/packages/digitalproperty-app/
  bcuser@ubuntu16045:~/composer-sample-applications/packages/digitalproperty-app$
