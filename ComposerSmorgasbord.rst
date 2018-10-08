@@ -301,6 +301,25 @@ A script has been provided to do this. Run the *createPeerAdminCard* script::
 
 **Step 2.21:** At this point you have deployed a Hyperledger Composer Business Network on a Hyperledger Fabric v1.2.0 network, but you have not actually created any participants or assets on the network.  Run this command and you will see that you will not have any “Land Titles” listed (if there had been any they would have been under the column headings surrounded by boxes at the bottom of this output)::
 
+ bcuser@ubuntu16045:~/composer-sample-applications/packages/digitalproperty-app$ npm run listAssets
+
+ > digitalproperty-app@0.0.11 listAssets /home/bcuser/composer-sample-applications/packages/digitalproperty-app
+ > node cli.js landregistry list
+
+ info: [DigitalProperty-App] Hyperledger Composer: Digital Property console application
+ info: [DigitalProperty-App] LandRegistry:<init> businessNetworkDefinition obtained digitalproperty-network@0.2.5
+ info: [DigitalProperty-App] listTitles Getting the asset registry
+ info: [DigitalProperty-App] listTitles Getting all assest from the registry.
+ info: [DigitalProperty-App] listTitles Current Land Titles
+ info: [DigitalProperty-App] Titles listed
+ info: [DigitalProperty-App] 
+ ┌─────────┬─────────┬────────────┬─────────┬─────────────┬─────────┐
+ │ TitleID │ OwnerID │ First Name │ Surname │ Description │ ForSale │
+ └─────────┴─────────┴────────────┴─────────┴─────────────┴─────────┘
+ info: [DigitalProperty-App] Command completed successfully.
+
+**Step 2.22:** Run the following *npm test* command which will define two assets owned by Fred Bloggs, list them, set one for sale, and list them again.  Everything below the *npm test* command that you will enter is output.  Look carefully at the tables and you will see that Fred Bloggs’ nice house in the country was initially listed as not for sale but then was made available for sale as the result of a Business Network transaction::
+
  bcuser@ubuntu16045:~/composer-sample-applications/packages/digitalproperty-app$ npm test
 
  > digitalproperty-app@0.0.11 pretest /home/bcuser/composer-sample-applications/packages/digitalproperty-app
