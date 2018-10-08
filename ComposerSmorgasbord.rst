@@ -657,7 +657,7 @@ In this step, the command is performed on your laptop or workstation. The above 
  bcuser@ubuntu16045:~$ cd ~/composer-sample-applications/packages/digitalproperty-app/
  bcuser@ubuntu16045:~/composer-sample-applications/packages/digitalproperty-app$
 
-**Step 4.33:** Run the *composer network list* command to list your network’s assets.  Your new *goldNuggets* asset will *not* show up since you have updated your business network on the Hyperledger Fabric yet::
+**Step 4.33:** Run the *composer network list* command to list your network’s assets.  Your new *goldNuggets* asset will *not* show up since you have not updated your business network on the Hyperledger Fabric yet::
 
  bcuser@ubuntu16045:~/composer-sample-applications/packages/digitalproperty-app$ composer network list --card admin@digitalproperty-network
  
