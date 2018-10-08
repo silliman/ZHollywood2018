@@ -985,7 +985,7 @@ The line you clicked on to expand and show the APIs for *LandTitle* acts like a 
  │ LID:1148 │ PID:1234567890 │ Fred       │ Bloggs   │ A nice house in the country.  He really needs the money! │ Yes     │
  ├──────────┼────────────────┼────────────┼──────────┼──────────────────────────────────────────────────────────┼─────────┤
  │ LID:6789 │ 1111           │ Barry      │ Silliman │ A small flat in the city                                 │ No      │
- └──────────┴────────────────┴────────────┴──────────┴─────────────────
+ └──────────┴────────────────┴────────────┴──────────┴──────────────────────────────────────────────────────────┴─────────┘  
  info: [DigitalProperty-App] Command completed successfully.
 
 **Step 5.22:** Please leave *composer-rest-server* running in the PuTTY or SSH session where you started it, as it will be used in the next section.  You may also leave open your browser tab or window that shows the Hyperledger Composer REST Server as you will have the opportunity to use it at the end of *Section 6*.
