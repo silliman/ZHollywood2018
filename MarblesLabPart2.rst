@@ -16,8 +16,8 @@ Section 2: Marbles user interface setup
  bcuser@ubuntu16045:~/zmarbles/marblesUI$ 
 
 **Step 2.2:** You will need to do an *npm install* to install the packages needed by the Marbles user interface.  
-First you will verify that the *node_modules* directory does not exist.  T
-his directory will be created when you run an npm *install* in the next step, so right now it shouldn't exist::
+First you will verify that the *node_modules* directory does not exist.  
+This directory will be created when you run an npm *install* in the next step, so right now it shouldn't exist::
 
  bcuser@ubuntu16045:~/zmarbles/marblesUI$ ls -l node_modules
  ls: cannot access 'node_modules': No such file or directory
@@ -492,7 +492,7 @@ When you do things as one user, e.g. as the United Marbles admin, go to the othe
 *	Click on the **Settings** button and **Enable** story mode.  Try an action that is allowed, and try an action that shouldn’t be allowed, such as trying to steal a marble from the other company.  **Disable** story mode when it gets too tedious, which shouldn’t take long.
 
 **Step 3.11:** Most marbles UI labs only have ten steps, but this lab goes to eleven.  
-If you want that extra push, try these optionaladvanced assignments:
+If you want that extra push, try these optional advanced assignments:
 
 *	Break out the previous lab’s material and enter the *cli* container and issue some commands to create, update or delete marbles.  See if the Marbles UI reflects your changes
 *	Look at some of the marbles chaincode container logs while you work with the Marbles UI -	**Hint:**  *docker logs [-f] container_name* will show a container’s log.  Try it without the optional *-f* argument first and then try it with it.   *-f* ties up your terminal session but then shows new log messages as they are created.  Press **Ctrl-c** to get out of it.
