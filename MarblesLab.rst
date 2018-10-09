@@ -33,7 +33,7 @@ Section 2	- Description of the subsequent sections in this lab
 This section provides a brief description of the subsequent sections in the lab, where you will get hands-on experience with the Hyperledger Fabric command line interface.
 
 1.	You will extract the artifacts necessary to run the lab in Section 3.  All the artifacts necessary for the lab are provided in a zip file.  
-2.	You will use Docker Compose to bring up the twelve Docker containers that comprise the Hyperledger Fabric network in Section 4.  You will see that all twelve Docker containers mentioned in Section 1 are brought up with a single _docker-compose_ command, and I will explain some of the more interesting bits of what is going on under the covers.
+2.	You will use Docker Compose to bring up the twelve Docker containers that comprise the Hyperledger Fabric network in Section 4.  You will see that all twelve Docker containers mentioned in Section 1 are brought up with a single *docker-compose* command, and I will explain some of the more interesting bits of what is going on under the covers.
 3.	You will create a channel in the Hyperledger Fabric network in Section 5.  In Hyperledger Fabric, each channel is essentially its own ledger.  
 4.	You will instruct each peer node to join the channel in Section 6.  We will join all four peer nodes to the channel.  Peer nodes can be members of more than one channel, but for our lab we are only creating one channel.
 5.	You will define an “anchor” peer for each organization in the channel in Section 7.  An anchor peer for an organization is a peer that is known by all the other organizations in a channel.  
@@ -103,7 +103,7 @@ An explanation of the purpose of each of these files and directories is given he
 
 The *base* directory contains Docker Compose files that are included in the *docker-compose-template.yaml* file with the *extends* directive.
 
-The *bin* directory contains Hyperledger Fabric utility programs that will be used by the *generateArtifacts.sh* script to generate cryptographic material (*cryptogen*) and channel configuration transactions (*configtxgen).
+The *bin* directory contains Hyperledger Fabric utility programs that will be used by the *generateArtifacts.sh* script to generate cryptographic material (*cryptogen*) and channel configuration transactions (*configtxgen*).
 
 The *channel-artifacts* directory is empty, but it must exist when the *generateArtifacts.sh* script, which you will run later, invokes the *configtxgen* utility which generates channel configuration transaction inputs.
 
@@ -186,7 +186,7 @@ So, enter the command below, optionally specifying a custom channel name (not sh
  2018-09-24 13:54:10.493 EDT [common/tools/configtxgen] doOutputAnchorPeersUpdate -> INFO 003 Writing anchor peer update
 
 
-By the way, if you enter a command and end it with #, everything after the # is considered a comment and is ignored by the shell.  
+By the way, if you enter a command and end it with *#* and then some text, everything after the *#* is considered a comment and is ignored by the shell.  
 So, if you see me place comments after any commands you do not have to enter them but if you do, it will not hurt anything.  
 
 This script calls two Hyperledger Fabric utilites- *cryptogen*, which creates security material (certificates and keys) 
@@ -278,9 +278,9 @@ I will describe how several statements work within the file, but time does not p
 static file that, once created, is read-only.  A Docker container is based on a Docker image, and any changes to the file system 
 within a Docker container are stored within the container.  So, multiple Docker containers can be based on the same Docker image, 
 and each Docker container keeps track of its own changes.  For example, the containers built for the **ca0** and **ca1** service will 
-be based on the *hyperledger/fabric-ca:latest* Docker image because they both have this statement in their definition::
+be based on the *hyperledger/fabric-ca:1.2.0* Docker image because they both have this statement in their definition::
 
-        image: hyperledger/fabric-ca    
+        image: hyperledger/fabric-ca:1.2.0   
 
 *environment* statements define environment variables that are available to the Docker container.  The Hyperledger Fabric processes 
 make ample use of environment variables.  In general, you will see that the certificate authority environment variables start with 
@@ -321,9 +321,8 @@ the *crypto-config* directory on your Linux on IBM Z host.  The prior *volumes* 
 the CouchDB services.
 
 *extends* statements are used by the peer nodes.  What this does is merge in other statements from another file.  For example, you 
-may notice that the peer nodes do not contain an images statement.  How does Docker know what Docker image file to base the 
-container on?  That is defined in the file, *base/peer-base.yaml*, specified in the *extends* section of *base/docker-compose.yaml*, 
-which is specified in the *extends* section of *docker-compose.yaml* for the peer nodes.
+may notice that the peer nodes do not contain an *image* statement.  How does Docker know what Docker image file to base the 
+container on?  That is defined in the file, *base/peer-base.yaml*, specified in the *extends* section of *base/docker-compose-base.yaml*, which is specified in the *extends* section of *docker-compose.yaml* for the peer nodes.
 
 *command* statements define what command is run when the Docker container is started.  
 This is how the actual Hyperledger Fabric processes get started.  
@@ -405,7 +404,7 @@ The decision on how many channels to create and what policies they have will usu
 **Step 5.1:**	Access the *cli* Docker container::
 
  bcuser@ubuntu16045:~/zmarbles$ docker exec -it cli bash
- root@a37940d016a7:/opt/gopath/src/github.com/hyperledger/fabric/peer#ic/peer#
+ root@a37940d016a7:/opt/gopath/src/github.com/hyperledger/fabric/peer#
 
 Observe that your command prompt changes when you enter the Docker container’s shell.
 
@@ -429,7 +428,7 @@ Therefore, throughout the remainder of this lab, before sending commands to a pe
 
 *source scripts/setpeer 0 0*   # to target Org 0, peer 0  (peer0.unitedmarbles.com)
 
-*source scripts/setpeer 0 1*   # to target Org 0, peer 1  (peer1.united marbles.com)
+*source scripts/setpeer 0 1*   # to target Org 0, peer 1  (peer1.unitedmarbles.com)
 
 *source scripts/setpeer 1 0*   # to target Org 1, peer 0  (peer0.marblesinc.com)
 

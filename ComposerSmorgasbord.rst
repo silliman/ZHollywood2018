@@ -301,6 +301,25 @@ A script has been provided to do this. Run the *createPeerAdminCard* script::
 
 **Step 2.21:** At this point you have deployed a Hyperledger Composer Business Network on a Hyperledger Fabric v1.2.0 network, but you have not actually created any participants or assets on the network.  Run this command and you will see that you will not have any “Land Titles” listed (if there had been any they would have been under the column headings surrounded by boxes at the bottom of this output)::
 
+ bcuser@ubuntu16045:~/composer-sample-applications/packages/digitalproperty-app$ npm run listAssets
+
+ > digitalproperty-app@0.0.11 listAssets /home/bcuser/composer-sample-applications/packages/digitalproperty-app
+ > node cli.js landregistry list
+
+ info: [DigitalProperty-App] Hyperledger Composer: Digital Property console application
+ info: [DigitalProperty-App] LandRegistry:<init> businessNetworkDefinition obtained digitalproperty-network@0.2.5
+ info: [DigitalProperty-App] listTitles Getting the asset registry
+ info: [DigitalProperty-App] listTitles Getting all assest from the registry.
+ info: [DigitalProperty-App] listTitles Current Land Titles
+ info: [DigitalProperty-App] Titles listed
+ info: [DigitalProperty-App] 
+ ┌─────────┬─────────┬────────────┬─────────┬─────────────┬─────────┐
+ │ TitleID │ OwnerID │ First Name │ Surname │ Description │ ForSale │
+ └─────────┴─────────┴────────────┴─────────┴─────────────┴─────────┘
+ info: [DigitalProperty-App] Command completed successfully.
+
+**Step 2.22:** Run the following *npm test* command which will define two assets owned by Fred Bloggs, list them, set one for sale, and list them again.  Everything below the *npm test* command that you will enter is output.  Look carefully at the tables and you will see that Fred Bloggs’ nice house in the country was initially listed as not for sale but then was made available for sale as the result of a Business Network transaction::
+
  bcuser@ubuntu16045:~/composer-sample-applications/packages/digitalproperty-app$ npm test
 
  > digitalproperty-app@0.0.11 pretest /home/bcuser/composer-sample-applications/packages/digitalproperty-app
@@ -633,12 +652,12 @@ In this step, the command is performed on your laptop or workstation. The above 
 
 **Note:** This step shows an example using *scp* within a *Cygwin* session.  If you are using *PuTTY* or another program such as *Filezilla*, the instructors will have provided appropriate instructions for this command.
 
-**Step 4.32:** Change to the directory from where you were previously working before you started working with Hyperledgver Composer Playground (you may need to start a new PuTTY session if Hyperledger Composer Playground is tying up your only other session)::
+**Step 4.32:** Change to the directory from where you were previously working before you started working with Hyperledger Composer Playground (you may need to start a new PuTTY session if Hyperledger Composer Playground is tying up your only other session)::
 
  bcuser@ubuntu16045:~$ cd ~/composer-sample-applications/packages/digitalproperty-app/
  bcuser@ubuntu16045:~/composer-sample-applications/packages/digitalproperty-app$
 
-**Step 4.33:** Run the *composer network list* command to list your network’s assets.  Your new *goldNuggets* asset will *not* show up since you have updated your business network on the Hyperledger Fabric yet::
+**Step 4.33:** Run the *composer network list* command to list your network’s assets.  Your new *goldNuggets* asset will *not* show up since you have not updated your business network on the Hyperledger Fabric yet::
 
  bcuser@ubuntu16045:~/composer-sample-applications/packages/digitalproperty-app$ composer network list --card admin@digitalproperty-network
  
@@ -966,7 +985,7 @@ The line you clicked on to expand and show the APIs for *LandTitle* acts like a 
  │ LID:1148 │ PID:1234567890 │ Fred       │ Bloggs   │ A nice house in the country.  He really needs the money! │ Yes     │
  ├──────────┼────────────────┼────────────┼──────────┼──────────────────────────────────────────────────────────┼─────────┤
  │ LID:6789 │ 1111           │ Barry      │ Silliman │ A small flat in the city                                 │ No      │
- └──────────┴────────────────┴────────────┴──────────┴─────────────────
+ └──────────┴────────────────┴────────────┴──────────┴──────────────────────────────────────────────────────────┴─────────┘  
  info: [DigitalProperty-App] Command completed successfully.
 
 **Step 5.22:** Please leave *composer-rest-server* running in the PuTTY or SSH session where you started it, as it will be used in the next section.  You may also leave open your browser tab or window that shows the Hyperledger Composer REST Server as you will have the opportunity to use it at the end of *Section 6*.
